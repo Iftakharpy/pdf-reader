@@ -1,7 +1,11 @@
+import os
 import pyttsx3
 import PyPDF2
 
-pdf_file = open("D:\python_book_01.pdf",'rb')
+current_directory = os.getcwd()
+file_name = os.path.join(current_directory,input("Enter pdf file name: "))
+
+pdf_file = open(file_name,'rb')
 parsed_pdf = PyPDF2.PdfFileReader(pdf_file)
 
 number_of_pages = parsed_pdf.numPages
